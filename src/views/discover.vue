@@ -118,7 +118,16 @@
 	export default {
 		data() {
 			return {
-				active: ''
+				active: '',
+				travelData:[
+					{
+						image:'',
+						title:'',
+						userimg:'',
+						theNumber:345,
+						commentNumber:2
+					}
+				]
 			}
 		},
 		components: {

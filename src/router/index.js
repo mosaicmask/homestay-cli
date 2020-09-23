@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [{
-		path: '/',
+		path: '/open',
 		name: 'open',
 		component: () => import('../views/open.vue')
 	},
@@ -34,7 +34,7 @@ const routes = [{
 		component: () => import('../views/index.vue')
 	},
 	{
-		path: '/discover',
+		path: '/',
 		name: 'discover',
 		component: () => import('../views/discover.vue')
 	},
