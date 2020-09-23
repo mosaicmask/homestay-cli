@@ -24,7 +24,7 @@
 			<div class="homestay_box">
 				<template v-for="(item,index) in homestayList">
 					<homestay-card>
-						<img src="https://s1.ax1x.com/2020/08/09/aTqWMn.jpg" alt="" slot="item-img">
+						<img :src="item.image" alt="" slot="item-img">
 						<span class="habitable_number" slot="item-habitable_number">{{item.habitableNumber}}</span>
 						<span class="title" slot="item-title">{{item.title}}</span>
 						<span class="price" slot="item-price">￥{{item.price}}</span>
@@ -63,22 +63,26 @@
 				homestayList: [{
 						habitableNumber: '整租-1居室-宜住3人',
 						title: '【依然】LOFT复式 近...',
-						price: 323
+						price: 323,
+						image:require('../../static/image/tehui (1).jpg')
 					},
 					{
 						habitableNumber: '整租-1居室-宜住2人',
 						title: '宁蘭-LITE2 海洋球空…',
-						price: 208
+						price: 208,
+						image:require('../../static/image/tehui (2).jpg')
 					},
 					{
 						habitableNumber: '整租-1居室-宜住4人',
 						title: '市中心法式Loft落地窗…',
-						price: 320
+						price: 320,
+						image:require('../../static/image/tehui (3).jpg')
 					},
 					{
 						habitableNumber: '整租-1居室-宜住3人',
 						title: '摩洛哥风格、巨屏投…',
-						price: 448
+						price: 448,
+						image:require('../../static/image/tehui (4).jpg')
 					}
 				]
 			}
@@ -105,6 +109,9 @@
 			width: 375px;
 			height: 287px;
 			background-image: linear-gradient(#ffffff, #757575);
+			background-image: url(../../static/image/1096072529.jpg);
+			background-repeat: no-repeat;
+			background-image: 100%;
 		}
 
 		.preference {
