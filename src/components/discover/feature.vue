@@ -12,6 +12,10 @@
 	.feature {
 		width: 110px;
 		height: 160px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
 
 		img {
 			width: 110px;

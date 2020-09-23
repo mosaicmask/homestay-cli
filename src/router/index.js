@@ -34,7 +34,7 @@ const routes = [{
 		component: () => import('../views/index.vue')
 	},
 	{
-		path: '/',
+		path: '/discover',
 		name: 'discover',
 		component: () => import('../views/discover.vue')
 	},
@@ -66,7 +66,7 @@ const routes = [{
 		component: () => import('../views/my.vue')
 	},
 	{
-		path: '/particulars',
+		path: '/',
 		name: 'particulars',
 		component: () => import('../views/particulars.vue')
 	}

@@ -42,7 +42,7 @@
 					</div>
 				</div>
 			</van-tab>
-			<van-tab title="网红民宿">
+			<van-tab title="民宿推荐">
 				<div class="influencer_body">
 					<template v-for="item in influencer">
 						<influencer>
@@ -64,47 +64,51 @@
 			<van-tab title="体验感受">
 				<div class="experience_body">
 					<div class="experience_body_left">
-						<template v-for="item in 5">
-							<travel-recommend>
-								<!-- 对应插槽 -->
-								<img src="https://s1.ax1x.com/2020/08/09/aTqWMn.jpg" slot="showimg" class="showimg">
-								<span class="title" slot="title">
-									第一次来杭州，住西湖边 清新loft
-								</span>
-								<img src="https://s1.ax1x.com/2020/08/09/aTqWMn.jpg" slot="userimg" class="userimg">
-								<img :src="require('../../static/icon/likenum_int.png')" slot="likenum_int_img">
-								<span slot="likenum">123</span>
-								<img :src="require('../../static/icon/comment.png')" slot="comment_img">
-								<span slot="comment_num">123</span>
-								<span slot="city" class="city">北京</span>
-							</travel-recommend>
+						<template v-for="(item,index) in experience">
+							<template v-if="index%2!=0">
+								<travel-recommend>
+									<!-- 对应插槽 -->
+									<img :src="item.image" slot="showimg" class="showimg">
+									<span class="title" slot="title">
+										{{item.title}}
+									</span>
+									<img :src="item.userimg" slot="userimg" class="userimg">
+									<img :src="require('../../static/icon/likenum_int.png')" slot="likenum_int_img">
+									<span slot="likenum">{{item.theNumber}}</span>
+									<img :src="require('../../static/icon/comment.png')" slot="comment_img">
+									<span slot="comment_num">{{item.commentNumber}}</span>
+									<span slot="city" class="city">{{item.city}}</span>
+								</travel-recommend>
+							</template>
 						</template>
 					</div>
 					<div class="experience_body_right">
-						<template v-for="item in 5">
-							<travel-recommend>
-								<!-- 对应插槽 -->
-								<img src="https://s1.ax1x.com/2020/08/09/aTqWMn.jpg" slot="showimg" class="showimg">
-								<span class="title" slot="title">
-									第一次来杭州，住西湖边 清新loft
-								</span>
-								<img src="https://s1.ax1x.com/2020/08/09/aTqWMn.jpg" slot="userimg" class="userimg">
-								<img :src="require('../../static/icon/likenum_int.png')" slot="likenum_int_img">
-								<span slot="likenum">123</span>
-								<img :src="require('../../static/icon/comment.png')" slot="comment_img">
-								<span slot="comment_num">123</span>
-								<span slot="city" class="city">北京</span>
-							</travel-recommend>
+						<template v-for="(item,index) in experience">
+							<template v-if="index%2==0">
+								<travel-recommend>
+									<!-- 对应插槽 -->
+									<img :src="item.image" slot="showimg" class="showimg">
+									<span class="title" slot="title">
+										{{item.title}}
+									</span>
+									<img :src="item.userimg" slot="userimg" class="userimg">
+									<img :src="require('../../static/icon/likenum_int.png')" slot="likenum_int_img">
+									<span slot="likenum">{{item.theNumber}}</span>
+									<img :src="require('../../static/icon/comment.png')" slot="comment_img">
+									<span slot="comment_num">{{item.commentNumber}}</span>
+									<span slot="city" class="city">{{item.city}}</span>
+								</travel-recommend>
+							</template>
 						</template>
 					</div>
 				</div>
 			</van-tab>
 			<van-tab title="特色房源">
 				<div class="feature_body">
-					<template v-for="item in 9">
+					<template v-for="item in feature">
 						<feature>
-							<img slot="img" src="https://s1.ax1x.com/2020/08/09/aTqWMn.jpg" />
-							<span slot="name">别墅</span>
+							<img slot="img" :src="item.image" />
+							<span slot="name">{{item.text}}</span>
 						</feature>
 					</template>
 				</div>
@@ -190,8 +194,111 @@
 					userimg_ii: require('../../static/image/influencer (2).jpg'),
 					userimg_iii: require('../../static/image/influencer (3).jpg'),
 					likenum: 54,
-					city:'北京'
-				}]
+					city: '北京'
+				}],
+				experience: [{
+						image: require('../../static/image/discover (1).jpg'),
+						title: '第一次来杭州，住西湖边 清新loft',
+						userimg: require('../../static/image/userimg (1).jpg'),
+						theNumber: 345,
+						commentNumber: 11,
+						city: '杭州'
+					},
+					{
+						image: require('../../static/image/discover (2).jpg'),
+						title: '杭州瑶仙境民宿 住进仙境里！',
+						userimg: require('../../static/image/userimg (2).jpg'),
+						theNumber: 235,
+						commentNumber: 21,
+						city: '杭州'
+					},
+					{
+						image: require('../../static/image/discover (3).jpg'),
+						title: '不到200元，住进重庆北欧风江景民宿！',
+						userimg: require('../../static/image/userimg (3).jpg'),
+						theNumber: 445,
+						commentNumber: 54,
+						city: '重庆'
+					},
+					{
+						image: require('../../static/image/discover (4).jpg'),
+						title: '西安地铁口附近ins投影电竞双床房',
+						userimg: require('../../static/image/userimg (4).jpg'),
+						theNumber: 345,
+						commentNumber: 23,
+						city: '西安'
+					},
+					{
+						image: require('../../static/image/discover (5).jpg'),
+						title: '平价！高端！西安北欧简约风民宿',
+						userimg: require('../../static/image/userimg (5).jpg'),
+						theNumber: 125,
+						commentNumber: 28,
+						city: '西安'
+					},
+					{
+						image: require('../../static/image/discover (6).jpg'),
+						title: '大连高性价比海景民宿，阳光沙滩海浪 住进世外…',
+						userimg: require('../../static/image/userimg (6).jpg'),
+						theNumber: 165,
+						commentNumber: 28,
+						city: '大连'
+					},
+					{
+						image: require('../../static/image/discover (7).jpg'),
+						title: '芳心纵火犯！人均80！西安最美loft民宿',
+						userimg: require('../../static/image/userimg (7).jpg'),
+						theNumber: 135,
+						commentNumber: 67,
+						city: '西安'
+					},
+					{
+						image: require('../../static/image/discover (8).jpg'),
+						title: '重庆南滨路民宿，超大落地窗看一线江景',
+						userimg: require('../../static/image/userimg (8).jpg'),
+						theNumber: 135,
+						commentNumber: 67,
+						city: '重庆'
+					}
+				],
+				feature:[
+					{
+						image:require('../../static/image/bieshu.jpg'),
+						text:'别墅'
+					},
+					{
+						image:require('../../static/image/haijin.jpg'),
+						text:'海景房'
+					},
+					{
+						image:require('../../static/image/zhuti.jpg'),
+						text:'主题特色'
+					},
+					{
+						image:require('../../static/image/qinglv.jpg'),
+						text:'情侣房'
+					},
+					{
+						image:require('../../static/image/fushi.jpg'),
+						text:'复式'
+					},
+					{
+						image:require('../../static/image/siheyuan.jpg'),
+						text:'四合院'
+					},
+					{
+						image:require('../../static/image/mufang.jpg'),
+						text:'木房'
+					},
+					{
+						image:require('../../static/image/guzhen.jpg'),
+						text:'古镇客栈'
+					},
+					{
+						image:require('../../static/image/nongjia.jpg'),
+						text:'农家院'
+					}
+				]
 			}
 		},
 		components: {
