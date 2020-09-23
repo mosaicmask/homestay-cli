@@ -44,10 +44,12 @@
 		}
 
 		.title {
+			width: 148px;
 			font-size: 13px;
 			letter-spacing: 1px;
 			color: #2d2b2b;
-			padding: 10px;
+			margin-top: 8px;
+			// padding: 10px;
 			line-height: 20px;
 			text-align: left;
 			overflow: hidden;
@@ -69,6 +71,7 @@
 				width: 24px;
 				height: 24px;
 				border-radius: 50%;
+				margin-left: 10px;
 			}
 
 			.interaction_box {
