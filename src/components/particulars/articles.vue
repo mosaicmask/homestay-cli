@@ -40,6 +40,7 @@
 			justify-content: flex-start;
 
 			span {
+				font-size: 10px;
 				margin: 5px;
 				overflow: hidden;
 				text-overflow: ellipsis;
