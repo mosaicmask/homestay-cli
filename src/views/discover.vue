@@ -118,16 +118,7 @@
 	export default {
 		data() {
 			return {
-				active: '',
-				travelData:[
-					{
-						image:'',
-						title:'',
-						userimg:'',
-						theNumber:345,
-						commentNumber:2
-					}
-				]
+				active: ''
 			}
 		},
 		components: {
