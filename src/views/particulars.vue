@@ -28,10 +28,11 @@
 			</span>
 		</div>
 		<van-image width="339px" height="199px" fit="fill" :src="require('../../static/image/map.jpg')" />
-		
+
 		<!-- 结算栏 -->
-		
 		<pay-money></pay-money>
+		<!-- 房东头像 -->
+		<img class="landlord_img" src="../../static/image/xiangqing_tou.jpg" alt="">
 	</div>
 </template>
 
@@ -50,9 +51,9 @@
 
 			}
 		},
-		methods:{
-			onSubmit(){
-				
+		methods: {
+			onSubmit() {
+
 			}
 		},
 		components: {
@@ -73,6 +74,7 @@
 		width: 100%;
 		height: auto;
 		margin-bottom: 80px;
+		position: relative;
 
 		.img_bg {
 			width: 375px;
@@ -102,6 +104,15 @@
 			height: 199px;
 			background-color: #d0cece;
 			border-radius: 5px;
+		}
+
+		.landlord_img {
+			width: 71px;
+			height: 71px;
+			border-radius: 50%;
+			position: absolute;
+			right: 10px;
+			top: 180px;
 		}
 	}
 </style>
