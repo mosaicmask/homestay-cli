@@ -1,10 +1,10 @@
 <template>
 	<div class="checkIn">
 		<div class="date_box">
-			<div class="date_box_top">
-				<span>10月01日</span>
-				<div class="checinDate">一晚</div>
-				<span>10月02日</span>
+			<div class="date_box_top" @click="showDate = true">
+				<span>{{start}}</span>
+				<div class="checinDate">{{num}}晚</div>
+				<span>{{end}}</span>
 				<div class="modification">
 					<span>修改</span>
 					<img src="../../../static/icon/jiantou_xiugai.png">
@@ -29,10 +29,64 @@
 				<span>其他3项优惠<img src="../../../static/icon/xiangqing.png"></span>
 			</div>
 		</div>
+		<van-calendar v-model="showDate" position="right" type="range" @confirm="onConfirm" confirm-text="完成"
+		 confirm-disabled-text="请选择结束时间" />
 	</div>
 </template>
 
 <script>
+	export default {
+		data() {
+			return {
+				date: '',
+				showDate: false,
+				start: '',
+				end: '',
+				num: 1,
+			};
+		},
+		watch:{
+			num:function(){
+				console.log(1);
+			}
+		},
+		created() {
+			this.newDate()
+		},
+		methods: {
+			// 初始
+			newDate() {
+				// 获取当前时间
+				let date = new Date()
+				// 获得默认入住时间
+				let start = date.getMonth() + 1 + '月' + date.getDate() + '日'
+				// 获得默认入住时间
+				let end = date.getMonth() + 1 + '月' + (date.getDate() + 1) + '日'
+				this.start = start
+				this.end = end
+			},
+			// 处理时间戳
+			formatDate(date) {
+				// 获得入住时间
+				let start = date[0].getMonth() + 1 + '月' + date[0].getDate() + '日'
+				// 获得离开时间
+				let end = date[1].getMonth() + 1 + '月' + date[1].getDate() + '日'
+				// 计算入住天数
+				let startDate = Date.parse(date[0]);
+				let endDate = Date.parse(date[1]);
+				let days = (endDate - startDate) / (1 * 24 * 60 * 60 * 1000);
+				// 改变值
+				this.start = start
+				this.end = end
+				this.num = days
+			},
+			// 按钮事件
+			onConfirm(date) {
+				this.showDate = false;
+				this.date = this.formatDate(date);
+			},
+		},
+	}
 </script>
 
 <style lang="less" scoped>
@@ -140,7 +194,8 @@
 				letter-spacing: 0px;
 				color: #0d0c0c;
 			}
-			img{
+
+			img {
 				width: 12px;
 				height: 12px;
 				margin-left: 5px;

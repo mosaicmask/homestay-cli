@@ -1,7 +1,7 @@
 <template>
 	<div class="topnav">
 		<div class="nav">
-			<div class="nav_left">
+			<div class="nav_left" @click="back">
 				<img src="../../../static/icon/jiantou_l.png">
 			</div>
 			<div class="nav_right">
@@ -13,6 +13,13 @@
 </template>
 
 <script>
+	export default {
+		methods: {
+			back() {
+				this.$router.go(-1); //返回上一层
+			}
+		}
+	}
 </script>
 
 <style lang="less" scoped>
@@ -36,7 +43,8 @@
 				height: 100%;
 				display: flex;
 				align-items: center;
-				img{
+
+				img {
 					width: 22px;
 				}
 			}
@@ -47,7 +55,8 @@
 				display: flex;
 				align-items: center;
 				justify-content: space-around;
-				img{
+
+				img {
 					width: 22px;
 				}
 			}

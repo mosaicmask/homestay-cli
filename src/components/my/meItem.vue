@@ -1,7 +1,7 @@
 <template>
 	<div class="meItem">
 		<slot name="item_icon"></slot>
-		<span name="item_text">待支付</span>
+		<slot name="item_text"></slot>
 	</div>
 </template>
 
@@ -23,6 +23,7 @@
 		}
 
 		span {
+			width: 70px;
 			font-size: 12px;
 			font-weight: normal;
 			font-stretch: normal;

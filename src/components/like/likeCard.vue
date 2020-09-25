@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<template v-for="item in 3">
-			<div class="likeCard">
-				<img class="show_img" src="https://s1.ax1x.com/2020/08/09/aTqWMn.jpg">
+			<div class="likeCard" @click="goParticulars">
+				<img class="show_img" src="../../../static/image/like (2).png">
 				<div class="title">春熙路太古里/建设路/熊猫基地半高空景观</div>
 				<div class="describe">实拍-整套1居1床2人-5.0分/1314点评</div>
 				<div class="userbox">
@@ -22,7 +22,7 @@
 						</div>
 					</div>
 					<div class="userbox_right">
-						<img class="user_img" src="https://s1.ax1x.com/2020/08/09/aTqWMn.jpg">
+						<img class="user_img" src="../../../static/image/influencer (9).jpg">
 					</div>
 				</div>
 				<div class="precedence">优先</div>
@@ -32,6 +32,16 @@
 </template>
 
 <script>
+	export default {
+		methods: {
+			goParticulars() {
+				// 命名的路由
+				this.$router.push({
+					name: 'particulars'
+				})
+			}
+		}
+	}
 </script>
 
 <style lang="less" scoped>

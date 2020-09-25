@@ -1,6 +1,6 @@
 <template>
 	<!-- 旅游推荐版块组件 -->
-	<div class="TravelRecommend">
+	<div class="TravelRecommend" @click="goParticulars">
 		<slot class="showimg" name="showimg"></slot>
 		<slot class="title" name="title"></slot>
 		<div class="userbox">
@@ -21,6 +21,16 @@
 </template>
 
 <script>
+	export default {
+		methods: {
+			goParticulars() {
+				// 命名的路由
+				this.$router.push({
+					name: 'particulars'
+				})
+			}
+		}
+	}
 </script>
 
 <style lang="less" scoped>

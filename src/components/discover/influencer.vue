@@ -1,5 +1,5 @@
 <template>
-	<div class="influencer">
+	<div class="influencer" @click="goParticulars">
 		<div class="influencer_imgbox">
 			<div class="influencer_imgbox_left">
 				<slot name="max_img"></slot>
@@ -27,6 +27,16 @@
 </template>
 
 <script>
+	export default {
+		methods: {
+			goParticulars() {
+				// 命名的路由
+				this.$router.push({
+					name: 'particulars'
+				})
+			}
+		}
+	}
 </script>
 
 <style lang="less" scoped>
